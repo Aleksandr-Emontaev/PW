@@ -6,5 +6,5 @@ test('API Login', async ({ request }) => {
     form: { username: admin.username, password: admin.password },
   });
 
-  expect(response.status()).toBe(200); // 200 OK (login is OK)
+  expect(response.status()).toBe(200);
 });
