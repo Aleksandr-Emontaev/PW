@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { kmsqacm, admin, api_config } from '../Recources/Recources';
+import { kmsqacm, admin, apiConfig } from '../Recources/Recources';
 
 test('API Login', async ({ request }) => {
-  const response = await request.post(api_config.kmsqacmurl + api_config.login_api_endpoint, {
+  const response = await request.post(apiConfig.kmsqacmurl + apiConfig.loginApiEndpoint, {
     form: { username: admin.username, password: admin.password },
   });
 

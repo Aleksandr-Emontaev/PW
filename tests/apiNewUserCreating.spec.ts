@@ -1,17 +1,17 @@
 import { test, expect } from '@playwright/test';
-import { kmsqacm, admin, api_config } from '../Recources/Recources';
+import { kmsqacm, admin, apiConfig } from '../Recources/Recources';
 
 test('API create new user', async ({ request }) => {
-  const response = await request.post(api_config.kmsqacmurl + api_config.login_api_endpoint, {
+  const response = await request.post(apiConfig.kmsqacmurl + apiConfig.loginApiEndpoint, {
     form: { username: admin.username, password: admin.password },
   });
 
   expect(response.status()).toBe(200);
-  const response_user_create = await request.post(
-    api_config.kmsqacmurl + api_config.save_new_user_endpoint,
+  const responseUserCreate = await request.post(
+    apiConfig.kmsqacmurl + apiConfig.saveNewUserEndpoint,
     {
-      form: api_config.request_new_user_data,
+      form: apiConfig.requestNewUserData,
     },
   );
-  expect(response_user_create.status()).toBe(200);
+  expect(responseUserCreate.status()).toBe(200);
 });
